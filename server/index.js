@@ -11,7 +11,7 @@ module.exports = function() {
         start;
 
     create = function(config) {
-        let routes = require('./routes');
+        let components = require('./components');
 
         // Server settings
         server.set('env', config.env);
@@ -23,8 +23,8 @@ module.exports = function() {
         server.use(bodyParser.json());
 
 
-        // Set up routes
-        routes.init(server);
+        // Set up components
+        components.init(server);
     };
 
     start = function() {
