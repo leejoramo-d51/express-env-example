@@ -1,8 +1,8 @@
 'use strict';
 
 let localConfig = {
-    hostname: 'localhost',
-    port: 3000,
+    hostname: '192.168.56.20',
+    port: 3003,
     viewDir: './app/views'
 };
 

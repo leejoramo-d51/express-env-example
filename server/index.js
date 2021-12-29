@@ -2,7 +2,7 @@
 
 const
     express = require('express'),
-    expressHandlebars = require('express-handlebars'),
+    { engine } = require('express-handlebars'),
     bodyParser = require('body-parser');
 
 module.exports = function() {
@@ -23,7 +23,7 @@ module.exports = function() {
         server.use(bodyParser.json());
 
         // Setup view engine
-        server.engine('.hbs', expressHandlebars({
+        server.engine('.hbs', engine({
             defaultLayout: 'default',
             layoutsDir: config.viewDir + '/layouts',
             extname: '.hbs'
