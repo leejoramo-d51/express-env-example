@@ -22,14 +22,6 @@ module.exports = function() {
         // Returns middleware that parses json
         server.use(bodyParser.json());
 
-        // Setup view engine
-        server.engine('.hbs', engine({
-            defaultLayout: 'default',
-            layoutsDir: config.viewDir + '/layouts',
-            extname: '.hbs'
-        }));
-        server.set('views', server.get('viewDir'));
-        server.set('view engine', '.hbs');
 
         // Set up routes
         routes.init(server);
