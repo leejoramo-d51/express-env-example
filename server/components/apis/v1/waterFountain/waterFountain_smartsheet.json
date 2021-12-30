@@ -1,0 +1,57 @@
+{
+
+
+    "Date": {
+        "widgetType": "date",
+        "errorAfterField": true,
+        "required": true,
+        "value": "__dateToday__",
+        "autofocus": true
+    },
+    "Liters": {
+        "widgetType": "integer",
+        "errorAfterField": true,
+        "required": true,
+        "help": "What is the current read-out on the fountains LCD screen?",
+        "comment": "made the widgetType and integer, and added help text"
+    },
+    "Bottle": {
+        "widgetType": "select",
+        "errorAfterField": true,
+        "required": true,
+        "choices": {
+            "Blue Bottle": "Blue Bottle",
+            "Coffee Carafe": "Coffee Carafe",
+            "Quart Jar": "Quart Jar",
+            "None": "None"
+        }
+    },
+    "Email": {
+        "widgetType": "email",
+        "errorAfterField": true,
+        "required": true,
+        "value": "__userEmail__",
+        "comment": "added 'value' and set it to put in the logged in users email address automatically"
+    },
+    "litersPerDay": {
+        "widgetType": "text",
+        "errorAfterField": true,
+        "required": false,
+        "formula": "=(Liters1 - Liters2) / (Date1 - Date2)",
+        "comment": "made not required, this is a behind the scenes formual field, added the forumal"
+    },
+    "interfaceTitle": {
+        "widgetType": "text",
+        "errorAfterField": true,
+        "required": false,
+        "formula": "=Date@row + \" - \" + Liters@row",
+        "comment": "made not required, this is a behind the scenes formual field, added the forumal"
+    },
+    "Notes": {
+        "widgetType": "textarea",
+        "widgetConfig": { "rows": "3"},
+        "errorAfterField": true,
+        "required": false,
+        "comment": "made not required, and changed to a three line textarea"
+    }
+}

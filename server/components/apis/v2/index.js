@@ -2,10 +2,10 @@
 
 const
     express = require('express'),
-    animalsController = require('../../../controllers/apis/animals');
+    animalsRouter = require('./animals');
 
 let router = express.Router();
 
-router.use('/animals', animalsController);
+router.use('/animals', animalsRouter);
 
 module.exports = router;

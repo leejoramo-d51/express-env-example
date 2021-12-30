@@ -2,10 +2,10 @@
 
 const
     express = require('express'),
-    dogsController = require('../../../controllers/apis/dogs');
+    dogsRoute = require('./dogs');
 
 let router = express.Router();
 
-router.use('/dogs', dogsController);
+router.use('/dogs', dogsRoute);
 
 module.exports = router;
