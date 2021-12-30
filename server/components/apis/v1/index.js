@@ -2,10 +2,13 @@
 
 const
     express = require('express'),
-    dogsRoute = require('./dogs');
+    route_dogs = require('./dogs'),
+    route_waterFountain = require('./waterFountain')
+
 
 let router = express.Router();
 
-router.use('/dogs', dogsRoute);
+router.use('/dogs', route_dogs);
+router.use('/waterFountain', route_waterFountain);
 
 module.exports = router;
