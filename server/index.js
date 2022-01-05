@@ -1,43 +1,48 @@
-'use strict';
+'use strict'
 
-const
-    express = require('express'),
-    { engine } = require('express-handlebars'),
-    bodyParser = require('body-parser');
+// external packages
+
+const express = require('express')
+const{ engine } = require('express-handlebars')
+cosnt bodyParser = require('body-parser')
+
+// project packages
+
+const config = require.main.require('./config')
+
 
 module.exports = function() {
-    let server = express(),
-        create,
-        start;
+    let server = express()
+    let create
+    let start
 
-    create = function(config) {
-        let components = require('./components');
+    create = function() {
+        let components = require('./components')
 
         // Server settings
-        server.set('env', config.env);
-        server.set('port', config.port);
-        server.set('hostname', config.hostname);
-        server.set('viewDir', config.viewDir);
+        server.set('env', config.env)
+        server.set('port', config.port)
+        server.set('hostname', config.hostname)
+        server.set('viewDir', config.viewDir)
 
         // Returns middleware that parses json
-        server.use(bodyParser.json());
-
+        server.use(bodyParser.json())
 
         // Set up components
-        components.init(server);
-    };
+        components.init(server)
+    }
 
     start = function() {
-        let hostname = server.get('hostname'),
-            port = server.get('port');
+        let hostname = server.get('hostname')
+        let port = server.get('port')
 
         server.listen(port, function () {
-            console.log('Express server listening on - http://' + hostname + ':' + port);
-        });
-    };
+            console.log('Express server listening on - http://' + hostname + ':' + port)
+        })
+    }
 
     return {
         create: create,
         start: start
-    };
-};
+    }
+}
