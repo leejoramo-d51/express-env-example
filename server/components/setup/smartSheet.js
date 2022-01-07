@@ -3,11 +3,11 @@
  * routes to automatically sets up a form based on a SmartSheet
  */
 
-const config = require.main.require('./config'),
+const config = require('../../../config'),
       basePath = process.cwd(),
-      {log, banner} =  require.main.require('./lib/logger')
-      sheet = require.main.require('./lib/sheet'),
-      tools = require.main.require('./lib/tools'),
+      {log, banner} =  require('../../../lib/logger')
+      sheet = require('../../../lib/sheet'),
+      tools = require('../../../lib/tools'),
       fs = require('fs'),
       client = require('smartsheet'),
       smartsheet = client.createClient(
@@ -20,18 +20,24 @@ const config = require.main.require('./config'),
  */
 
 
-module.exports.get_formMaker_formName_sheetId = function (req, res) {
+module.exports.get_formMaker_formName_sheetId =  function (req, res) {
     log('ROUTE/getFormMaker')
     // given a formName and SmartSheet sheetId
     // pull the meta data from SmartSheet and generate
     // a generic form definition as a JSON file and a generic Jade/Pug template
 
     const formName = req.params['formName']
+    const sheetId = req.params['sheetId']
+
+    const params = {
+        formName: formName,
+        sheetId: sheetId
+    }
 
     // the "includeAll" option forces this to return all columns,
     // and not to paginate the results
     const options = {
-        sheetId : req.params['sheetId'],
+        sheetId : sheetId,
         queryParameters: {
             includeAll: true,
             include: 'objectValue',
@@ -64,30 +70,27 @@ module.exports.get_formMaker_formName_sheetId = function (req, res) {
     } else {
         log('create new form '+ formName)
         // no configuration file found. Let's create one
+        log('options', options)
         smartsheet.sheets.getColumns(options)
-            .then(function(data) {
+            .then(async function(data) {
                 // got meta data from SmartSheet
                 // generate form definition JSON and template
-                const columns = sheet.getColumnMetaData(data)
-                const fieldsJSON = tools.buildFormConfig(columns.raw.data)
-                tools.displayData(res, fieldsJSON,
+                banner('lets build it')
+                const fieldsSchema =  await tools.buildFormConfig(params, data)
+                const fieldsSchemaJSON = JSON.stringify(fieldsSchema, null, 4)
+                tools.displayData(res, fieldsSchemaJSON,
                     '// automatic formConfig',
-                    '// form config generated from SmartSheet data and saved to:'+
-                    '<ul><li>'+
-                    './formConfig/'+formName+'.json'+
-                    '</li><li>'+
-                    './views/'+formName+'.pug'+
-                    '</li></ul>'
+                    '// form config generated from SmartSheet data and saved'
                     )
-                fs.writeFile(`${basePath}/new/${formName}.json`, fieldsJSON, function(err) {
+                fs.writeFile(`${basePath}/new/${formName}.json`, fieldsSchemaJSON, function(err) {
                     if(err) {
                         banner('Failed to write file json')
                         return log(err)
                     }
                     log('./formConfig/'+formName+'.json  was saved!')
                 })
-                const pugTemplate = tools.buildFormSvelte(columns.nameToId)
-                fs.writeFile(`${basePath}/new/${formName}.part.html`, pugTemplate, function(err) {
+                const template = await tools.buildFormSvelte(fieldsSchema)
+                fs.writeFile(`${basePath}/new/${formName}.part.html`, template, function(err) {
                     if(err) {
                         banner('Failed to write file pug')
                         return log(err)

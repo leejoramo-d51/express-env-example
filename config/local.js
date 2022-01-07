@@ -7,10 +7,12 @@ let localConfig = {
     port: 3003,
     viewDir: './app/views',
     smartSheetClientConfig: {
-        accessToken: '9m6mla2jttb974ydhimyixegmp',
+
         baseUrl: 'https://api.smartsheet.com/2.0/'
     }
 
-};
+
+}
+localConfig.baseURL = `http://${localConfig.host}/formMakerApp`
 
 module.exports = localConfig;

@@ -1,0 +1,23 @@
+{
+  "moduleResolution": "node",
+  "compilerOptions": {
+      "resolveJsonModule": true,
+      "jsx": "preserve",
+      "module": "commonjs",
+      "target": "es5",
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "paths": {
+        "./config": ["./config"],
+        "./config/*": ["./config/*"],
+        "./lib": ["./lib"],
+        "./lib/*": ["./lib/*"]
+      }
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules",
+    "dist"
+  ]
+}

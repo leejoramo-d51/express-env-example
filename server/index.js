@@ -4,11 +4,11 @@
 
 const express = require('express')
 const{ engine } = require('express-handlebars')
-cosnt bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 
 // project packages
 
-const config = require.main.require('./config')
+const config = require('../config')
 
 
 module.exports = function() {

@@ -1,0 +1,79 @@
+{
+    "sheetId": "5381275776247684",
+    "formName": "waterFountain",
+    "formTitle": "waterFountain",
+    "idToName": {
+        "397683039987588": "Primary Column",
+        "4901282667358084": "Date",
+        "2649482853672836": "Liters",
+        "2682167554795396": "Bottle",
+        "3100523139229572": "Email",
+        "4933967368480644": "Notes"
+    },
+    "nameToId": {
+        "Primary Column": 397683039987588,
+        "Date": 4901282667358084,
+        "Liters": 2649482853672836,
+        "Bottle": 2682167554795396,
+        "Email": 3100523139229572,
+        "Notes": 4933967368480644
+    },
+    "fields": {
+        "Primary Column": {
+            "label": "Primary Column",
+            "help": "",
+            "smartsheetId": 397683039987588,
+            "widgetType": "text",
+            "errorLocation": "after",
+            "required": true,
+            "autofocus": true
+        },
+        "Date": {
+            "label": "Date",
+            "help": "",
+            "smartsheetId": 4901282667358084,
+            "widgetType": "date",
+            "errorLocation": "after",
+            "required": true
+        },
+        "Liters": {
+            "label": "Liters",
+            "help": "",
+            "smartsheetId": 2649482853672836,
+            "widgetType": "text",
+            "errorLocation": "after",
+            "required": true
+        },
+        "Bottle": {
+            "label": "Bottle",
+            "help": "",
+            "smartsheetId": 2682167554795396,
+            "widgetType": "select",
+            "errorLocation": "after",
+            "required": true,
+            "choices": {
+                "Blue Bottle": "Blue Bottle",
+                "Coffee Carafe": "Coffee Carafe",
+                "Quart Jar": "Quart Jar",
+                "None": "None"
+            }
+        },
+        "Email": {
+            "label": "Email",
+            "help": "",
+            "smartsheetId": 3100523139229572,
+            "widgetType": "email",
+            "errorLocation": "after",
+            "required": true
+        },
+
+        "Notes": {
+            "label": "Notes",
+            "help": "",
+            "smartsheetId": 4933967368480644,
+            "widgetType": "text",
+            "errorLocation": "after",
+            "required": true
+        }
+    }
+}
