@@ -4,7 +4,7 @@
     "formTitle": "waterFountain",
     "idToName": {
         "397683039987588": "Primary Column",
-        "4901282667358084": "Date",
+        "4901282667358084": "DateNOW",
         "2649482853672836": "Liters",
         "2682167554795396": "Bottle",
         "3100523139229572": "Email",
@@ -12,7 +12,7 @@
     },
     "nameToId": {
         "Primary Column": 397683039987588,
-        "Date": 4901282667358084,
+        "DateNOW": 4901282667358084,
         "Liters": 2649482853672836,
         "Bottle": 2682167554795396,
         "Email": 3100523139229572,
@@ -28,8 +28,8 @@
             "required": true,
             "autofocus": true
         },
-        "Date": {
-            "label": "Date",
+        "DateNOW": {
+            "label": "DateNOW",
             "help": "",
             "smartsheetId": 4901282667358084,
             "widgetType": "date",

@@ -2,14 +2,22 @@
 
 
 const express = require('express')
-const service_waterFountain = require('./services_waterFountain')
-const api_smartsheet = require('./save')
+const api_waterFountain = require('./services_waterfountain')
+const z_demo_service_waterFountain = require('./z_demo_services_waterFountain')
 
-let router = express.Router();
+const myroute = 'waterFountain'
 
-router.get('/', api_smartsheet.get_formName);
-router.get('/fakeJSON', service_waterFountain.getData);
-router.get('/:id', service_waterFountain.getDataAttribute);
+let router = express.Router()
+
+router.get('/', api_waterFountain.get_sheet)
+router.get('/filter/:filterField/:filter', api_waterFountain.get_sheet)
+router.get('/update/:rowId', api_waterFountain.get_row)
 
 
-module.exports = router;
+
+router.get('/fakeJSON', z_demo_service_waterFountain.getData)
+router.get('/:id', z_demo_service_waterFountain.getDataAttribute)
+router.get('/:id/:rowId', z_demo_service_waterFountain.getDataAttribute)
+
+
+module.exports = router

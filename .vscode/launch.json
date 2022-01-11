@@ -8,7 +8,9 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "type": "pwa-node"
+            "type": "pwa-node",
+            "console": "integratedTerminal",
+            "outputCapture": "std"
         }
     ]
 }
