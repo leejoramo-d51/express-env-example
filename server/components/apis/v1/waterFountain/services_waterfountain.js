@@ -23,3 +23,10 @@ module.exports.get_row = async function getRow (req, res) {
     sheet_api.get_SheetRows(req, res, schema, action)
 }
 
+module.exports.get_sheetExport = async function sheetExport (req, res) {
+    sheet_api.get_sheetExport(req, res, schema)
+}
+
+module.exports.get_userSheetAccess = async function sheetExport (req, res) {
+    sheet_api.get_userSheetAccess(req, res, schema)
+}

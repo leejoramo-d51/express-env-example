@@ -12,7 +12,8 @@ let router = express.Router()
 router.get('/', api_waterFountain.get_sheet)
 router.get('/filter/:filterField/:filter', api_waterFountain.get_sheet)
 router.get('/update/:rowId', api_waterFountain.get_row)
-
+router.get('/export', api_waterFountain.get_sheetExport)
+router.get('/userAccess', api_waterFountain.get_userSheetAccess)
 
 
 router.get('/fakeJSON', z_demo_service_waterFountain.getData)
