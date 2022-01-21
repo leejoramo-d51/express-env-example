@@ -3,8 +3,10 @@
 // external packages
 
 const express = require('express')
-const{ engine } = require('express-handlebars')
 const bodyParser = require('body-parser')
+const flash = require('connect-flash')
+const session = require('../lib/sessions')
+
 
 // project packages
 
@@ -27,6 +29,18 @@ module.exports = function() {
 
         // Returns middleware that parses json
         server.use(bodyParser.json())
+
+        // setup sessions
+        server.use(session)
+
+        // Flash Messages
+        server.use(flash())
+        server.use(function(req, res, next){
+            res.locals.success_messages = req.flash('success_messages')
+            res.locals.error_messages = req.flash('error_messages')
+            res.locals.info_messages = req.flash('info_messages')
+            next()
+        });
 
         // Set up components
         components.init(server)

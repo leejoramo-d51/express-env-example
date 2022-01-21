@@ -1,7 +1,8 @@
 'use strict';
 
 const apiRoute = require('./apis')
-const setupRoute = require('./utility')
+const utilityRoute = require('./utility')
+// const loginRoute = require('./login')
 
 function init(server) {
     server.get('*', function (req, res, next) {
@@ -14,7 +15,8 @@ function init(server) {
     }); */
 
     server.use('/api', apiRoute);
-    server.use('/utility', setupRoute)
+    server.use('/utility', utilityRoute)
+   // server.use('/login', loginRoute)
 
 }
 

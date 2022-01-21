@@ -6,7 +6,8 @@
 const config = require('../../../config')
 const basePath = process.cwd()
 const {log, banner} =  require('../../../lib/logger')
-const sheet = require('../../../lib/sheet')
+// TODO: remove require 'lib/sheet'
+// TODO: const sheet = require('../../../lib/sheet')
 const tools = require('../../../lib/tools')
 const fs = require('fs')
 const client = require('smartsheet')
