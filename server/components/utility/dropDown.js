@@ -9,7 +9,7 @@ const tools = require('../../../lib/tools')
 const dropDown = require('../../../lib/smartsheet_dropDown')
 const client = require('smartsheet')
 const smartsheet = client.createClient(
-        config.smartSheetClientConfig
+        tools.smartSheetClientConfig()
       )
 
 //TODO: const hasUpdateDropDownsAccess = req.session.hasUpdateDropDownsAccess
@@ -22,8 +22,8 @@ const hasUpdateDropDownsAccess = true
 
  module.exports.get_dropDowns = async function (req, res) {
     // landing page for updating smartsheet dropdowns
-    const result = await dropDown.listSheetsWithDropDowns(req, res)
-
+    let result = await dropDown.listSheetsWithDropDowns(req, res)
+    result.requestData = tools.requestData(req)
     res.setHeader('Content-Type', 'application/json')
     res.send(result)
 }
@@ -41,6 +41,7 @@ module.exports.get_dropDowns_updateOne = async function (req, res) {
         })
     req.flash('success_messages', 'hens on parade')
     result = getMessages(result, req)
+
     res.setHeader('Content-Type', 'application/json')
     res.send(result)
 }

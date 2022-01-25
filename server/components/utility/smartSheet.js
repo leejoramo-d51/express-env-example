@@ -12,7 +12,7 @@ const tools = require('../../../lib/tools')
 const fs = require('fs')
 const client = require('smartsheet')
 const smartsheet = client.createClient(
-        config.smartSheetClientConfig
+        tools.smartSheetClientConfig()
       )
 
 

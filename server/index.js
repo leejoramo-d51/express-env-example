@@ -28,6 +28,7 @@ module.exports = function() {
         server.set('viewDir', config.viewDir)
 
         // Returns middleware that parses json
+        server.use(bodyParser.urlencoded({ extended: false }))
         server.use(bodyParser.json())
 
         // setup sessions

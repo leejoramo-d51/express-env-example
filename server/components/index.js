@@ -2,11 +2,15 @@
 
 const apiRoute = require('./apis')
 const utilityRoute = require('./utility')
-// const loginRoute = require('./login')
+const loginRoute = require('./auth')
 
 function init(server) {
     server.get('*', function (req, res, next) {
         console.log('Request was made to: ' + req.originalUrl);
+        return next();
+    });
+    server.post('*', function (req, res, next) {
+        console.log('Request was made to POST: ' + req.originalUrl);
         return next();
     });
 
@@ -16,7 +20,8 @@ function init(server) {
 
     server.use('/api', apiRoute);
     server.use('/utility', utilityRoute)
-   // server.use('/login', loginRoute)
+    server.use('/auth', loginRoute)
+
 
 }
 
