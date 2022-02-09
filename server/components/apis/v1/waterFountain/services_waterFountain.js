@@ -14,13 +14,15 @@ const schema = require('./schema_waterfountain.json')
  */
 
 module.exports.get_sheet = async function getSheet (req, res) {
-    const action = 'sheet'
-    sheet.get_SheetRows(req, res, schema, action)
+    sheet.get_SheetRows(req, res, schema, 'sheet')
 }
 
 module.exports.get_row = async function getRow (req, res) {
-    const action = 'row'
-    sheet.get_SheetRows(req, res, schema, action)
+    sheet.get_SheetRows(req, res, schema, 'row')
+}
+
+module.exports.post_row = async function postRow (req, res) {
+    sheet.post_row(req, res, schema)
 }
 
 module.exports.get_sheetExport = async function sheetExport (req, res) {
