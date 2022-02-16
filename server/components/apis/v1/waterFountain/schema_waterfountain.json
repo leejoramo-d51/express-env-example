@@ -2,8 +2,9 @@
     "sheetId": "5381275776247684",
     "formName": "waterFountain",
     "formTitle": "waterFountain",
+    "saveFile": false,
     "idToName": {
-        "397683039987588": "Primary Column",
+        "1139838619543428": "URL",
         "4901282667358084": "Date",
         "2649482853672836": "Liters",
         "2682167554795396": "Bottle",
@@ -11,7 +12,7 @@
         "4933967368480644": "Notes"
     },
     "nameToId": {
-        "Primary Column": 397683039987588,
+        "URL": 1139838619543428,
         "Date": 4901282667358084,
         "Liters": 2649482853672836,
         "Bottle": 2682167554795396,
@@ -19,14 +20,15 @@
         "Notes": 4933967368480644
     },
     "fields": {
-        "Primary Column": {
-            "label": "Primary Column",
+        "URL": {
+            "label": "URL",
             "help": "",
-            "smartsheetId": 397683039987588,
+            "smartsheetId": 1139838619543428,
             "widgetType": "text",
             "errorLocation": "after",
-            "required": true,
-            "autofocus": true
+            "urlRaw": true,
+            "required": false,
+            "security": ["read"]
         },
         "Date": {
             "label": "Date",
@@ -34,7 +36,8 @@
             "smartsheetId": 4901282667358084,
             "widgetType": "date",
             "errorLocation": "after",
-            "required": true
+            "required": true,
+            "security": ["read", "write"]
         },
         "Liters": {
             "label": "Liters",
@@ -42,7 +45,8 @@
             "smartsheetId": 2649482853672836,
             "widgetType": "text",
             "errorLocation": "after",
-            "required": true
+            "required": true,
+            "security": ["read", "write"]
         },
         "Bottle": {
             "label": "Bottle",
@@ -56,7 +60,8 @@
                 "Coffee Carafe": "Coffee Carafe",
                 "Quart Jar": "Quart Jar",
                 "None": "None"
-            }
+            },
+            "security": ["read", "write"]
         },
         "Email": {
             "label": "Email",
@@ -64,7 +69,8 @@
             "smartsheetId": 3100523139229572,
             "widgetType": "email",
             "errorLocation": "after",
-            "required": true
+            "required": true,
+            "security": ["read", "write"]
         },
 
         "Notes": {
@@ -73,7 +79,8 @@
             "smartsheetId": 4933967368480644,
             "widgetType": "text",
             "errorLocation": "after",
-            "required": true
+            "required": true,
+            "security": ["read", "write"]
         }
     }
 }

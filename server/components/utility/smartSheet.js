@@ -22,7 +22,7 @@ const smartsheet = client.createClient(
 
 
 module.exports.get_createSchema_formName_sheetId =  function (req, res) {
-    log('ROUTE/getFormMaker')
+    banner('ROUTE get_createSchema_formName_sheetId')
     // given a formName and SmartSheet sheetId
     // pull the meta data from SmartSheet and generate
     // a form schema as a JSON file and a generic HTML template
