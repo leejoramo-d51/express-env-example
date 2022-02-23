@@ -19,6 +19,9 @@
         "Email": 3100523139229572,
         "Notes": 4933967368480644
     },
+
+
+
     "fields": {
         "URL": {
             "label": "URL",
@@ -37,7 +40,13 @@
             "widgetType": "date",
             "errorLocation": "after",
             "required": true,
-            "security": ["read", "write"]
+            "security": {
+                "read": ["ALL~ALL"],
+                "write": ["Report Due~Security Officer"]
+            }
+
+
+
         },
         "Liters": {
             "label": "Liters",

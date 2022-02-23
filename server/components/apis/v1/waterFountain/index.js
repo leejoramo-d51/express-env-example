@@ -10,6 +10,7 @@ const myroute = 'waterFountain'
 let router = express.Router()
 
 router.get('/', api_waterFountain.get_sheet)
+router.get('/schema', api_waterFountain.get_schema)
 router.get('/filter/:filterField/:filter', api_waterFountain.get_sheet)
 router.get('/update/:rowId', api_waterFountain.get_row)
 router.post(

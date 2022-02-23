@@ -3,6 +3,8 @@
 const apiRoute = require('./apis')
 const utilityRoute = require('./utility')
 const loginRoute = require('./auth')
+const {checkAuth} = require('../../lib/middleware')
+
 
 function init(server) {
     server.get('*', function (req, res, next) {
@@ -18,7 +20,7 @@ function init(server) {
         res.redirect('/home');
     }); */
 
-    server.use('/api', apiRoute);
+    server.use('/api', checkAuth([]), apiRoute);
     server.use('/utility', utilityRoute)
     server.use('/auth', loginRoute)
 

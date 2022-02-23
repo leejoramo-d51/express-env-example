@@ -13,6 +13,10 @@ const schema = require('./schema_waterfountain.json')
  * Routes
  */
 
+ module.exports.get_schema = async function getSchema (req, res) {
+    sheet.get_Schema(req, res, schema)
+}
+
 module.exports.get_sheet = async function getSheet (req, res) {
     sheet.get_SheetRows(req, res, schema, 'sheet')
 }
