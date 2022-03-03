@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch formMakerAPI",
+            "name": "Launch formMakerAPI via VSCode",
             "program": "${workspaceFolder}/app.js",
             "request": "launch",
             "skipFiles": [
@@ -11,6 +11,20 @@
             "type": "pwa-node",
             "console": "integratedTerminal",
             "outputCapture": "std"
+        },
+
+        {
+            "address": "192.168.56.20:9229/d5e052ec-fa3a-4d3b-aaf0-6d125a5a2876",
+            "localRoot": "${workspaceFolder}",
+            "name": "Attach to Remote",
+            "port": 9229,
+            "remoteRoot": "\\192.168.56.20\u20dev\projects\express-env-example",
+            "request": "attach",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node",
+            "restart": true
         }
     ]
 }

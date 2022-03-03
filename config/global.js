@@ -36,6 +36,7 @@ const global = {
         "accessToken": "",
         "baseUrl": "https://api.smartsheet.com/2.0/"
     },
+    "routePermissionsSheetId": "318706682226564",
     /** id Authentication based routes -----------------------------------
      * these routes use only a provided Employee ID number to allow access
      * (most routes require AD username and password)

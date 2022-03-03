@@ -15,6 +15,9 @@ router.get('/smartSheet/createSchema/:formName/:sheetId',
 router.get('/smartSheet/listSheets',
             checkAuth([]),
             sheetAPI.get_listSheets)
+router.get('/smartSheet/routePermissionsSave',
+            checkAuth([]),
+            sheetAPI.routePermissionsSave)
 router.get('/smartSheet/listOrganizationSheets',
             checkAuth([]),
             sheetAPI.get_listOrganizationSheets)

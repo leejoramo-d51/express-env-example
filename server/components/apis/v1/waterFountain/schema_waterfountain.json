@@ -8,7 +8,8 @@
         "2649482853672836": "Liters",
         "2682167554795396": "Bottle",
         "3100523139229572": "Email",
-        "4933967368480644": "Notes"
+        "4933967368480644": "Notes",
+        "1139838619543428": "URL"
     },
     "nameToId": {
         "Primary Column": 397683039987588,
@@ -16,7 +17,8 @@
         "Liters": 2649482853672836,
         "Bottle": 2682167554795396,
         "Email": 3100523139229572,
-        "Notes": 4933967368480644
+        "Notes": 4933967368480644,
+        "URL": 1139838619543428
     },
     "fields": {
         "Primary Column": {
@@ -74,6 +76,14 @@
             "widgetType": "text",
             "errorLocation": "after",
             "required": true
-        }
+        },
+        "URL": {
+			"label": "URL",
+            "smartsheetId": 1139838619543428,
+			"widgetType": "text",
+			"errorAfterField": true,
+			"help": "be sure to include HTTP or HTTPS",
+			"comment": ""
+		}
     }
 }

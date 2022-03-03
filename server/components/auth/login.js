@@ -11,7 +11,7 @@ const sqlQuery = require('../../../lib/sqlQuery')
 const activeDirectory = require('activedirectory')
 const fs = require('fs')
 
-const routePermissionsFile = './cache/routePermissions.json'
+const routePermissionsFile = './cache/routePermissions2.json'
 
 /*
 const sheet = require('../../../lib/sheet')

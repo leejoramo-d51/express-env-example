@@ -4,7 +4,8 @@
   "description": "App example of express environment",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "debug": "nodemon -w lib -w app.js -w server --inspect=0.0.0.0 app.js"
   },
   "engines": {
     "node": "^16.13.0"
