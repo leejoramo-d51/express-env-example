@@ -20,6 +20,8 @@ specifiers:
   smartsheet: ^2.126.0
   sqlite3: ^5.0.2
   uuid: ^8.3.2
+  validator: ^13.7.0
+  vest: ^4.2.2
 
 dependencies:
   activedirectory: 0.7.2
@@ -41,6 +43,8 @@ dependencies:
   smartsheet: 2.126.0
   sqlite3: 5.0.2
   uuid: 8.3.2
+  validator: 13.7.0
+  vest: 4.2.2
 
 packages:
 
@@ -692,6 +696,10 @@ packages:
   /content-type/1.0.4:
     resolution: {integrity: sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /context/2.0.1:
+    resolution: {integrity: sha512-8QV3EXa7WP9l8aL8a3BMM792vvuPbIyp6ktGHEX6V4XiGNaiqxCGMRGzEavE3cPnHWqI9fXTujPEfBPt0iRhQw==}
     dev: false
 
   /cookie-signature/1.0.6:
@@ -1938,6 +1946,12 @@ packages:
     dev: false
     optional: true
 
+  /n4s/4.1.2:
+    resolution: {integrity: sha512-xn4sPvCiocGNPwD6QCYjPPlD0GfvBVe+9Dn8EnEsdm3ZvFg1CzAbsmSlKuh/FskNUHipM3XfolO8DoBoWiprgg==}
+    dependencies:
+      context: 2.0.1
+    dev: false
+
   /nan/2.15.0:
     resolution: {integrity: sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==}
     dev: false
@@ -3005,6 +3019,13 @@ packages:
       assert-plus: 1.0.0
       core-util-is: 1.0.2
       extsprintf: 1.3.0
+    dev: false
+
+  /vest/4.2.2:
+    resolution: {integrity: sha512-K0lNhaLUciHCrPZhcEiZnfZEiFHNmKwdTAM3sxD4FidnqNK2Cyp+wbjRMVjDcZ9B25414VaYqMHtBdl0aUVK+Q==}
+    dependencies:
+      context: 2.0.1
+      n4s: 4.1.2
     dev: false
 
   /webidl-conversions/3.0.1:
