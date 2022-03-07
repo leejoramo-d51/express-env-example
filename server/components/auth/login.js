@@ -4,9 +4,9 @@
  */
 
 const config = require('../../../config')
-const { log, banner } = require('../../../lib/logger')
-const tools = require('../../../lib/tools')
-const sqlQuery = require('../../../lib/sqlQuery')
+const { log, banner } = require('#lib/logger')
+const tools = require('#lib/tools')
+const sqlQuery = require('#lib/sqlQuery')
 
 const activeDirectory = require('activedirectory')
 const fs = require('fs')
@@ -14,7 +14,7 @@ const fs = require('fs')
 const routePermissionsFile = './cache/routePermissions2.json'
 
 /*
-const sheet = require('../../../lib/sheet')
+const sheet = require('#lib/sheet')
 const sheet = require('../sheet')
 const authenticate = require('../authenticate')
 const getSubsbyID = require('../importDataIFAS_id').getStaffSubsSiteAndManager

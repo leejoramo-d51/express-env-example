@@ -7,6 +7,9 @@
     "start": "node app.js",
     "debug": "nodemon -w lib -w app.js -w server --inspect=0.0.0.0 app.js"
   },
+  "imports": {
+    "#lib/*": "./lib/*.js"
+  },
   "engines": {
     "node": "^16.13.0"
   },

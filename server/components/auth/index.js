@@ -3,7 +3,7 @@
 
 const express = require('express')
 const loginRoute = require('./login')
-const {checkAuth} = require('../../../lib/middleware')
+const {checkAuth} = require('#lib/middleware')
 
 
 let router = express.Router()

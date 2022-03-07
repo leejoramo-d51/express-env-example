@@ -4,9 +4,9 @@
  */
 
 const config = require('../../../config')
-const {log, banner} =  require('../../../lib/logger')
-const tools = require('../../../lib/tools')
-const dropDown = require('../../../lib/smartsheet_dropDown')
+const {log, banner} =  require('#lib/logger')
+const tools = require('#lib/tools')
+const dropDown = require('#lib/smartsheet_dropDown')
 const client = require('smartsheet')
 const smartsheet = client.createClient(
         tools.smartSheetClientConfig()

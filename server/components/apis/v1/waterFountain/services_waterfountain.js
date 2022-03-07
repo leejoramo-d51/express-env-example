@@ -5,7 +5,7 @@
  *
  **/
 
-const sheet = require('../../../../../lib/smartsheet_sheet')
+const sheet = require('#lib/smartsheet_sheet')
 
 const schema = require('./schema_waterfountain.json')
 

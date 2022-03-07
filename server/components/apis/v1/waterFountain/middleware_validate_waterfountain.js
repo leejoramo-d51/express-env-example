@@ -4,8 +4,8 @@
  * the validate forms
  *
  **/
- const {log, banner} =  require('../../../../../lib/logger')
- const validate = require('../../../../../lib/validate/validate_waterfountain')
+ const {log, banner} =  require('#lib/logger')
+ const validate = require('#lib/validate/validate_waterfountain')
 const validationSuite = validate.validationSuite
 
 

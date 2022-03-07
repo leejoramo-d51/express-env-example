@@ -6,7 +6,7 @@ const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const flash = require('connect-flash')
-const session = require('../lib/sessions')
+const session = require('#lib/sessions')
 
 
 // project packages

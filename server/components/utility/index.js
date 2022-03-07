@@ -4,8 +4,8 @@ const
     express = require('express'),
     smartSheetRoute = require('./smartSheet'),
     dropDowns = require('./dropDown'),
-    sheetAPI = require('../../../lib/smartsheet_sheet'),
-    {checkAuth} = require('../../../lib/middleware')
+    sheetAPI = require('#lib/smartsheet_sheet'),
+    {checkAuth} = require('#lib/middleware')
 
 let router = express.Router();
 
