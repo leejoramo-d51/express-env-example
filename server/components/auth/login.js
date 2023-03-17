@@ -325,3 +325,12 @@ exports.get_notAuthorized = function (req, res) {
     })
 }
 
+exports.get_user = async function (req, res) {
+    banner('route: get_user')
+
+    const user = req.session.user
+
+    res.setHeader('Content-Type', 'application/json')
+    res.send(JSON.stringify(user))
+    return
+}
