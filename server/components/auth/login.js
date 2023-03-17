@@ -4,17 +4,17 @@
  */
 
 const config = require('../../../config')
-const { log, banner } = require('../../../lib/logger')
-const tools = require('../../../lib/tools')
-const sqlQuery = require('../../../lib/sqlQuery')
+const { log, banner } = require('#lib/logger')
+const tools = require('#lib/tools')
+const sqlQuery = require('#lib/sqlQuery')
 
 const activeDirectory = require('activedirectory')
 const fs = require('fs')
 
-const routePermissionsFile = './cache/routePermissions.json'
+const routePermissionsFile = './cache/routePermissions2.json'
 
 /*
-const sheet = require('../../../lib/sheet')
+const sheet = require('#lib/sheet')
 const sheet = require('../sheet')
 const authenticate = require('../authenticate')
 const getSubsbyID = require('../importDataIFAS_id').getStaffSubsSiteAndManager
@@ -325,3 +325,12 @@ exports.get_notAuthorized = function (req, res) {
     })
 }
 
+exports.get_user = async function (req, res) {
+    banner('route: get_user')
+
+    const user = req.session.user
+
+    res.setHeader('Content-Type', 'application/json')
+    res.send(JSON.stringify(user))
+    return
+}

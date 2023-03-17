@@ -4,8 +4,8 @@ const
     express = require('express'),
     smartSheetRoute = require('./smartSheet'),
     dropDowns = require('./dropDown'),
-    sheetAPI = require('../../../lib/smartsheet_sheet'),
-    {checkAuth} = require('../../../lib/middleware')
+    sheetAPI = require('#lib/smartsheet_sheet'),
+    {checkAuth} = require('#lib/middleware')
 
 let router = express.Router();
 
@@ -15,6 +15,9 @@ router.get('/smartSheet/createSchema/:formName/:sheetId',
 router.get('/smartSheet/listSheets',
             checkAuth([]),
             sheetAPI.get_listSheets)
+router.get('/smartSheet/routePermissionsSave',
+            checkAuth([]),
+            sheetAPI.routePermissionsSave)
 router.get('/smartSheet/listOrganizationSheets',
             checkAuth([]),
             sheetAPI.get_listOrganizationSheets)

@@ -3,7 +3,7 @@
 
 const express = require('express')
 const loginRoute = require('./login')
-const {checkAuth} = require('../../../lib/middleware')
+const {checkAuth} = require('#lib/middleware')
 
 
 let router = express.Router()
@@ -20,6 +20,9 @@ router.post('/login',
 
 router.get('/logout',
            loginRoute.get_logout)
+
+router.get('/get_user',
+           loginRoute.get_user)
 
 module.exports = router
 
